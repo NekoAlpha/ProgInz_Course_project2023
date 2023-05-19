@@ -1,11 +1,15 @@
 package lv.venta.models.users;
 
+import java.util.Collection;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -47,6 +51,38 @@ public class Person {
 	@Pattern(regexp = "[0-9]{6}-[0-9]{5}", message = "Neatbilstošs personas kods")
 	@Size(min = 3, max = 15, message = "Jabūt vismaz 3 un ne vairāk kā 15 simboliem")
 	private String personcode;
+	
+	
+	@OneToOne
+	@JoinColumn(name = "idu")
+	private User user;
+
+
+	public Person(
+			@NotNull @Pattern(regexp = "[A-ZĒŪĪĻĶŠĀŽČŅ]{1}[a-zēūīļķšāžčņ\\ ]+", message = "Pirmajam burtam jābūt lielajam") @Size(min = 3, max = 15, message = "Jabūt vismaz 3 un ne vairāk kā 15 simboliem") String name,
+			@NotNull @Pattern(regexp = "[A-ZĒŪĪĻĶŠĀŽČŅ]{1}[a-zēūīļķšāžčņ\\ ]+", message = "Pirmajam burtam jābūt lielajam") @Size(min = 3, max = 15, message = "Jabūt vismaz 3 un ne vairāk kā 15 simboliem") String surname,
+			@NotNull @Pattern(regexp = "[0-9]{6}-[0-9]{5}", message = "Neatbilstošs personas kods") @Size(min = 3, max = 15, message = "Jabūt vismaz 3 un ne vairāk kā 15 simboliem") String personcode,
+			User user) {
+		super();
+		this.name = name;
+		this.surname = surname;
+		this.personcode = personcode;
+		this.user = user;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
