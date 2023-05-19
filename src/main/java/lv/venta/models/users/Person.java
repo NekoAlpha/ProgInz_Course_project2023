@@ -66,7 +66,6 @@ public class Person {
 			@NotNull @Pattern(regexp = "[A-ZĒŪĪĻĶŠĀŽČŅ]{1}[a-zēūīļķšāžčņ\\ ]+", message = "Pirmajam burtam jābūt lielajam") @Size(min = 3, max = 15, message = "Jabūt vismaz 3 un ne vairāk kā 15 simboliem") String surname,
 			@NotNull @Pattern(regexp = "[0-9]{6}-[0-9]{5}", message = "Neatbilstošs personas kods") @Size(min = 3, max = 15, message = "Jabūt vismaz 3 un ne vairāk kā 15 simboliem") String personcode,
 			User user) {
-		super();
 		this.name = name;
 		this.surname = surname;
 		this.personcode = personcode;
