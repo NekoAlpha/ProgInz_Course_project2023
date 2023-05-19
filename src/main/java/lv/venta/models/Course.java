@@ -1,4 +1,4 @@
-package lv.venta.models.users;
+package lv.venta.models;
 
 import java.lang.reflect.Array;
 import java.util.ArrayDeque;
@@ -54,6 +54,14 @@ public class Course {
 	private int creditPoints;
 	
 
+	@ManyToMany(mappedBy = "")
+	private Collection<Student> debtStudents = new ArrayList<>();
+	
+	
+	
+	
+	
+	
 	public Course(
 			@NotNull @Pattern(regexp = "[A-ZĒŪĪĻĶŠĀŽČŅ]{1}[a-zēūīļķšāžčņ\\ ]+", message = "Pirmajam burtam jābūt lielajam") @Size(min = 5, max = 25, message = "Jabūt vismaz 5 un ne vairāk kā 25 simboliem") String title,
 			@Min(1) @Max(20) int creditPoints) {
@@ -63,7 +71,6 @@ public class Course {
 	
 	
 
-	//TODO izveidot profesora izdzēšanas funkciju
 	
 	
 }
