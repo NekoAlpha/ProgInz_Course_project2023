@@ -52,7 +52,7 @@ public class Person {
 	//TODO apdomāt un pielietot risinājumu ārzemju studentiem un jaunajiem LV personas kodiem
 	@NotNull
 	@Pattern(regexp = "[0-9]{6}-[0-9]{5}", message = "Neatbilstošs personas kods")
-	@Size(min = 3, max = 15, message = "Jabūt vismaz 3 un ne vairāk kā 15 simboliem")
+	@Size(min = 12, max = 12, message = "Jabūt vismaz 3 un ne vairāk kā 15 simboliem")
 	private String personcode;
 	
 	
